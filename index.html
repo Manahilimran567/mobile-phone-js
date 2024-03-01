@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile phone recommendations</title>
+</head>
+<body>
+    
+
+
+
+    <script>
+alert("let me recommend you some mobile phones")
+var budget = prompt("Enter your budget (low, medium, high):");
+var os = prompt("Enter your preferred operating system (Android, iOS):");
+var cameraQuality = prompt("Enter your preferred camera quality (basic, moderate, high):");
+var batteryLife = prompt("Enter your preferred battery life (short, average, long):");
+var screenSize = prompt("Enter your preferred screen size (small, medium, large):");
+
+
+function suggestMobilePhone(budget, os, cameraQuality, batteryLife, screenSize) {
+  
+    var mobilePhones = {
+        lowBudget: {
+            Android: {
+                basicCamera: {
+                    shortBattery: "Samsung Galaxy A01",
+                    averageBattery: "Samsung Galaxy A02",
+                    longBattery: "Samsung Galaxy A03"
+                },
+                moderateCamera: {
+                    shortBattery: "Xiaomi Redmi 9A",
+                    averageBattery: "Xiaomi Redmi 9",
+                    longBattery: "Xiaomi Redmi 9T"
+                },
+                highCamera: {
+                    shortBattery: "Realme C11",
+                    averageBattery: "Realme C15",
+                    longBattery: "Realme C25"
+                }
+            },
+            iOS: {
+                basicCamera: {
+                    shortBattery: "iPhone SE (2nd generation)",
+                    averageBattery: "iPhone SE (2nd generation)",
+                    longBattery: "iPhone SE (2nd generation)"
+                },
+                moderateCamera: {
+                    shortBattery: "iPhone SE (2nd generation)",
+                    averageBattery: "iPhone SE (2nd generation)",
+                    longBattery: "iPhone SE (2nd generation)"
+                },
+                highCamera: {
+                    shortBattery: "iPhone SE (2nd generation)",
+                    averageBattery: "iPhone SE (2nd generation)",
+                    longBattery: "iPhone SE (2nd generation)"
+                }
+            }
+        },
+        mediumBudget: {
+            Android: {
+                basicCamera: {
+                    shortBattery: "Samsung Galaxy A12",
+                    averageBattery: "Samsung Galaxy A22",
+                    longBattery: "Samsung Galaxy A32"
+                },
+                moderateCamera: {
+                    shortBattery: "Xiaomi Redmi Note 9",
+                    averageBattery: "Xiaomi Redmi Note 10",
+                    longBattery: "Xiaomi Redmi Note 10 Pro"
+                },
+                highCamera: {
+                    shortBattery: "Realme 7",
+                    averageBattery: "Realme 8",
+                    longBattery: "Realme 8 Pro"
+                }
+            },
+            iOS: {
+                basicCamera: {
+                    shortBattery: "iPhone XR",
+                    averageBattery: "iPhone 11",
+                    longBattery: "iPhone 11 Pro"
+                },
+                moderateCamera: {
+                    shortBattery: "iPhone XR",
+                    averageBattery: "iPhone 11",
+                    longBattery: "iPhone 11 Pro"
+                },
+                highCamera: {
+                    shortBattery: "iPhone XR",
+                    averageBattery: "iPhone 11",
+                    longBattery: "iPhone 11 Pro"
+                }
+            }
+        },
+        highBudget: {
+            Android: {
+                basicCamera: {
+                    shortBattery: "Samsung Galaxy S21",
+                    averageBattery: "Samsung Galaxy S21+",
+                    longBattery: "Samsung Galaxy S21 Ultra"
+                },
+                moderateCamera: {
+                    shortBattery: "Xiaomi Mi 11",
+                    averageBattery: "Xiaomi Mi 11 Lite",
+                    longBattery: "Xiaomi Mi 11 Ultra"
+                },
+                highCamera: {
+                    shortBattery: "OnePlus 9",
+                    averageBattery: "OnePlus 9 Pro",
+                    longBattery: "OnePlus 9 Pro"
+                }
+            },
+            iOS: {
+                basicCamera: {
+                    shortBattery: "iPhone 13",
+                    averageBattery: "iPhone 13 Pro",
+                    longBattery: "iPhone 13 Pro Max"
+                },
+                moderateCamera: {
+                    shortBattery: "iPhone 13",
+                    averageBattery: "iPhone 13 Pro",
+                    longBattery: "iPhone 13 Pro Max"
+                },
+                highCamera: {
+                    shortBattery: "iPhone 13",
+                    averageBattery: "iPhone 13 Pro",
+                    longBattery: "iPhone 13 Pro Max"
+                }
+            }
+        }
+    };
+
+    
+    if (budget === "low") {
+        return mobilePhones.lowBudget[os][cameraQuality][batteryLife];
+    } else if (budget === "medium") {
+        return mobilePhones.mediumBudget[os][cameraQuality][batteryLife];
+    } else if (budget === "high") {
+        return mobilePhones.highBudget[os][cameraQuality][batteryLife];
+    } else {
+        return "Invalid preferences.";
+    }
+}
+
+
+var suggestedMobilePhone = suggestMobilePhone(budget, os, cameraQuality, batteryLife, screenSize);
+
+alert("Based on your preferences, we recommend the following mobile phone: " + suggestedMobilePhone);
+
+    </script>
+</body>
+</html>
